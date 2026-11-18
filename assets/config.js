@@ -6,14 +6,6 @@
    For Telegram Stars, fill "link" instead of "address".
    ========================================================= */
 window.DONATE_CONFIG = {
-  btc: {
-    name: "Bitcoin",
-    network: "Bitcoin (BTC)",
-    icon: "₿",
-    color: "#f7931a",
-    address: "", // TODO: add Bitcoin address
-    link: ""
-  },
   ton: {
     name: "Toncoin (TON)",
     network: "TON — The Open Network",

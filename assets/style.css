@@ -105,17 +105,45 @@ html[data-theme="dark"] #themeBtn .ico-moon { display: block; }
   margin-bottom: 20px;
 }
 .hero-lead {
-  max-width: 660px; margin: 0 auto;
-  font-size: clamp(16px, 1.9vw, 19px); line-height: 1.7; color: var(--muted);
+  max-width: 640px; margin: 0 auto 30px;
+  font-size: clamp(18px, 2.2vw, 23px); font-weight: 500;
+  line-height: 1.45; color: var(--fg);
 }
+.hero-intro {
+  max-width: 740px; margin: 0 auto;
+  text-align: start;
+  display: grid; gap: 14px;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.75; color: var(--muted);
+}
+.hero-intro strong { color: var(--fg); font-weight: 700; }
+
+/* ---------- Support / Why ---------- */
+.support { padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 8vw, 96px); }
+.support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: start; }
+.section-title { font-size: clamp(20px, 2.4vw, 24px); font-weight: 700; letter-spacing: -.01em; margin-bottom: 16px; }
+.support-list { display: grid; gap: 12px; }
+.support-list li {
+  position: relative; padding-inline-start: 26px;
+  font-size: 15px; color: var(--muted); line-height: 1.6;
+}
+.support-list li::before {
+  content: ""; position: absolute; inset-inline-start: 4px; top: 9px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+}
+.support-col p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+.thanks { color: var(--fg) !important; font-weight: 600; }
+.signature { display: flex; flex-direction: column; gap: 2px; margin-top: 20px; }
+.signature-name { font-weight: 700; font-size: 15px; }
+.signature-tagline { font-style: italic; font-size: 13.5px; color: var(--faint); }
 
 /* ---------- Donation methods ---------- */
 .methods { padding-bottom: clamp(48px, 7vw, 88px); }
 .methods-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
-  max-width: 980px;
+  max-width: 780px;
 }
 .method {
   display: flex; align-items: center; gap: 16px;
@@ -277,6 +305,8 @@ html[dir="rtl"] .method:hover .method-arrow { transform: scaleX(-1) translateX(3
 @media (max-width: 720px) {
   .header-inner { height: 56px; }
   .nav-link:not(.nav-icon):not(.lang-btn) { display: none; }
+  .methods-grid { grid-template-columns: 1fr; }
+  .support-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid .footer-col:first-child { grid-column: 1 / -1; }
 }
