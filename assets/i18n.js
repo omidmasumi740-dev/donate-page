@@ -36,7 +36,6 @@ window.I18N = {
 
     "footer.community": "Social & Community",
     "footer.telegramChannel": "Telegram Channel",
-    "footer.telegramDirect": "Telegram (Direct)",
     "footer.project": "Project",
     "footer.source": "Source Code",
     "footer.issues": "Issues",
@@ -105,7 +104,6 @@ window.I18N = {
 
     "footer.community": "شبکه‌های اجتماعی و انجمن",
     "footer.telegramChannel": "کانال تلگرام",
-    "footer.telegramDirect": "تلگرام (مستقیم)",
     "footer.project": "پروژه",
     "footer.source": "کد منبع",
     "footer.issues": "مسائل (Issues)",

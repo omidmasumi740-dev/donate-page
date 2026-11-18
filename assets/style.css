@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    File Organizer — Donate page
    Theme tokens follow DESIGN.md (light + dark).
    ========================================================= */
@@ -98,7 +98,7 @@ html[data-theme="dark"] #themeBtn .ico-sun { display: none; }
 html[data-theme="dark"] #themeBtn .ico-moon { display: block; }
 
 /* ---------- Hero ---------- */
-.hero { padding: clamp(56px, 9vw, 104px) 0 clamp(36px, 5vw, 56px); text-align: center; }
+.hero { padding: clamp(48px, 7vw, 84px) 0 clamp(20px, 3vw, 32px); text-align: center; }
 .hero-title {
   font-size: clamp(40px, 7vw, 68px);
   font-weight: 800; letter-spacing: -.03em; line-height: 1.02;
@@ -119,7 +119,7 @@ html[data-theme="dark"] #themeBtn .ico-moon { display: block; }
 .hero-intro strong { color: var(--fg); font-weight: 700; }
 
 /* ---------- Support / Why ---------- */
-.support { padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 8vw, 96px); }
+.support { padding: clamp(24px, 4vw, 40px) 0 clamp(56px, 8vw, 88px); }
 .support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: start; }
 .section-title { font-size: clamp(20px, 2.4vw, 24px); font-weight: 700; letter-spacing: -.01em; margin-bottom: 16px; }
 .support-list { display: grid; gap: 12px; }
@@ -138,7 +138,7 @@ html[data-theme="dark"] #themeBtn .ico-moon { display: block; }
 .signature-tagline { font-style: italic; font-size: 13.5px; color: var(--faint); }
 
 /* ---------- Donation methods ---------- */
-.methods { padding-bottom: clamp(48px, 7vw, 88px); }
+.methods { padding-bottom: clamp(20px, 3vw, 32px); }
 .methods-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -191,6 +191,7 @@ html[dir="rtl"] .method:hover .method-arrow { transform: scaleX(-1) translateX(3
 /* ---------- Modal ---------- */
 .modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; }
 .modal[hidden] { display: none; }
+[hidden] { display: none !important; }
 .modal-backdrop {
   position: absolute; inset: 0;
   background: rgba(9, 16, 28, .55);
@@ -261,8 +262,23 @@ html[dir="rtl"] .method:hover .method-arrow { transform: scaleX(-1) translateX(3
 .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* docs modal */
-.modal-docs { max-width: 620px; max-height: 86vh; overflow-y: auto; }
-.docs-title { font-size: 24px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 12px; padding-inline-end: 30px; }
+.modal-docs {
+  max-width: 620px; max-height: 86vh;
+  display: flex; flex-direction: column;
+  padding: 0; overflow: hidden;
+}
+.modal-docs .docs-head {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 24px 24px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-docs .modal-close { position: static; flex: none; }
+.docs-scroll {
+  overflow-y: auto; overscroll-behavior: contain;
+  padding: 18px 24px 24px;
+  scrollbar-width: thin;
+}
+.docs-title { flex: 1; font-size: 22px; font-weight: 800; letter-spacing: -.02em; margin: 0; padding-top: 4px; }
 .docs-lead { font-size: 15.5px; color: var(--muted); margin-bottom: 26px; }
 .docs-block { margin-bottom: 24px; }
 .docs-block h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
@@ -282,7 +298,14 @@ html[dir="rtl"] .method:hover .method-arrow { transform: scaleX(-1) translateX(3
   width: 6px; height: 3px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
   transform: rotate(-45deg);
 }
-.docs-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.docs-actions {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin: 0; flex: none;
+  padding: 14px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 0 0 18px 18px;
+}
 
 /* ---------- Toast ---------- */
 .toast {
@@ -313,7 +336,9 @@ html[dir="rtl"] .method:hover .method-arrow { transform: scaleX(-1) translateX(3
 @media (max-width: 460px) {
   .footer-grid { grid-template-columns: 1fr; }
   .modal { padding: 14px; }
-  .modal-card { padding: 22px; }
+  .modal-card:not(.modal-docs) { padding: 22px; }
+  .modal-docs .docs-head { padding: 18px 16px 10px; }
+  .docs-scroll { padding: 14px 16px 18px; }
 }
 
 /* ---------- Reduced motion ---------- */
